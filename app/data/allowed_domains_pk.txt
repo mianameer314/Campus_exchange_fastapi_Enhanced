@@ -1,0 +1,11 @@
+# One domain per line (comments start with #)
+cuiatk.edu.pk
+uet.edu.pk
+lums.edu.pk
+nust.edu.pk
+qau.edu.pk
+pu.edu.pk
+bzu.edu.pk
+icp.edu.pk
+pucit.edu.pk
+kiet.edu.pk
