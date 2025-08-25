@@ -12,16 +12,18 @@ class PaginatedResponse(BaseModel, Generic[T]):
     total_pages: int
 
 class AdminUserOut(BaseModel):
-    id: str  # Changed from int to str for string user IDs
+    id: str
     email: str
     is_admin: bool
     is_verified: bool
     is_active: bool
-    university: Optional[str]
+    university: Optional[str] = Field(None, alias="university_name")  # 👈 alias maps DB -> schema
     created_at: Optional[datetime] = None
-    
+
     class Config:
         from_attributes = True
+        populate_by_name = True  # 👈 allows outputting as "university"
+
 
 class AdminListingOut(BaseModel):
     id: int
