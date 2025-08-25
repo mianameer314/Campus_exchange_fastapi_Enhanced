@@ -14,6 +14,10 @@ class User(Base):
     email: Mapped[str] = mapped_column(String(255), unique=True, index=True, nullable=False)
     hashed_password: Mapped[str] = mapped_column(String(255), nullable=False)
 
+    # ✅ Reset password token + expiry
+    reset_token: Mapped[Optional[str]] = mapped_column(String(255), nullable=True)
+    reset_token_expiry: Mapped[Optional[datetime]] = mapped_column(DateTime(timezone=True), nullable=True)
+
     # identity
     full_name: Mapped[Optional[str]] = mapped_column(String(255), nullable=True)
     profile_picture: Mapped[Optional[str]] = mapped_column(String(512), nullable=True)
